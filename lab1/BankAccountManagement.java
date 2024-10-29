@@ -13,7 +13,7 @@ class BankAccount {
         this.balance = initialBalance;
         this.monthlyInterestRate = monthlyInterestRate;
         this.withdrawalCount = 0;
-        this.transactionHistory = new String[100]; // Limit to 100 transactions
+        this.transactionHistory = new String[100]; 
         this.transactionIndex = 0;
     }
 
@@ -66,26 +66,26 @@ public class BankAccountManagement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Create a new bank account
+       
         BankAccount account = new BankAccount("Nguyen Van A", 5000000, 1.0); // 1% monthly interest
         System.out.println("Tạo tài khoản mới: " + account.accountHolder);
         System.out.println("Số dư ban đầu: " + String.format("%,.0f", account.getBalance()) + " VNĐ");
 
-        // Perform transactions
-        account.deposit(1000000); // Deposit 1 million VNĐ
-        account.withdraw(500000);  // Withdraw 500 thousand VNĐ
-        account.withdraw(500000);  // Attempt to withdraw again - should exceed limit
+       
+        account.deposit(1000000); 
+        account.withdraw(500000);  
+        account.withdraw(500000);  
 
-        // Print current balance
+       
         System.out.println("so du: " + String.format("%,.0f", account.getBalance()) + " VNĐ");
 
-        // Print transaction history
+        
         account.printTransactionHistory();
 
-        // Apply monthly interest
+      
         account.applyMonthlyInterest();
 
-        // Close the scanner
+       
         scanner.close();
     }
 }
